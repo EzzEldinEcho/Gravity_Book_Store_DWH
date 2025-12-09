@@ -428,56 +428,14 @@ create table fact_table_gravity_book_store
 )
 -----------------------------------------------------------------------------------------------------
 
+ALTER TABLE [dbo].[dim_book]
+ALTER column [publicationDate] datetime
 
-alter table [dbo].[dim_book]
-alter column [publicationDate] datetime
-
-select dd.Date_SK , dd.Date
-from [dbo].[Dim_Date] as dd
-
-select dt.Time_SK , dt.Time
-from [dbo].[Dim_Time] as dt
-
-select oh.history_key_sk , oh.history_id_bk
-from [dbo].[dim_order_history] as oh
-
-select c.cus_key_sk , c.cus_id_bk
-from [dbo].[dim_customer] as c
-
-select b.book_key_sk , b.book_id_bk
-from [dbo].[dim_book] as b
-
-
-delete from [dbo].[dim_address]
-delete from [dbo].[dim_author]
-delete from [dbo].[dim_book]
-delete from [dbo].[dim_bridge_book_author]
-delete from [dbo].[dim_bridge_customer_address]
-delete from [dbo].[dim_customer]
-delete from [dbo].[Dim_Date]
-delete from [dbo].[dim_order_history]
-delete from [dbo].[dim_shipping_method]
-delete from [dbo].[Dim_Time]
-delete from [dbo].[fact_table_gravity_book_store]
-
-select * from [dbo].[dim_address]
-select * from [dbo].[dim_author]
-select * from [dbo].[dim_book]
-select * from [dbo].[dim_bridge_book_author]
-select * from [dbo].[dim_bridge_customer_address]
-select * from [dbo].[dim_customer]
-select * from [dbo].[Dim_Date]
-select * from [dbo].[dim_order_history]
-select * from [dbo].[dim_shipping_method]
-select * from [dbo].[Dim_Time]
-select * from [dbo].[fact_table_gravity_book_store]
-
-alter table [dbo].[dim_author]
-alter column [author_name] varchar(400)
+ALTER TABLE [dbo].[dim_author]
+ALTER column [author_name] varchar(400)
 
 ALTER TABLE [dbo].[dim_author]
 ALTER COLUMN [author_name] NVARCHAR(400);
-
 
 ALTER TABLE [dbo].[dim_order_history]
 ALTER COLUMN [status_value] NVARCHAR(400);
