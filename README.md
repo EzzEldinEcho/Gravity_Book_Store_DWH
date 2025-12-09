@@ -8,8 +8,6 @@ A comprehensive **Business Intelligence solution** for a book store, implementin
 
 This project demonstrates a full end-to-end data warehouse implementation for an online book store business, including dimensional modeling, ETL processes, and analytical reporting.
 
-**Domain**: E-commerce (Book Retail)  
-**Purpose**: Enable data-driven decision making through sales, customer, and inventory analytics
 
 ---
 
@@ -21,7 +19,7 @@ This project demonstrates a full end-to-end data warehouse implementation for an
 ### Source Database Schema
 ![Source Database](docs/GBS_Database.jpg)
 
-**Schema Design**: Star Schema with 1 Fact Table, 10 Dimension Tables, and 2 Bridge Tables
+**Schema Design**: Snowflake Schema with 1 Fact Table, 10 Dimension Tables, and 2 Bridge Tables
 
 ---
 
@@ -31,34 +29,8 @@ This project demonstrates a full end-to-end data warehouse implementation for an
 |-----------|-----------|
 | **Database** | SQL Server |
 | **ETL** | SSIS (SQL Server Integration Services) |
-| **OLAP** | SSAS (SQL Server Analysis Services) |
 | **Reporting** | Power BI |
 
----
-
-## 📁 Project Structure
-
-```
-├── README.md                          # Project documentation
-├── database/
-│   └── GBS_Schema.sql                # Complete database schema
-├── docs/
-│   ├── GBS_DWH_Model.png             # Data warehouse model
-│   ├── GBS_Database.jpg              # Source database diagram
-│   └── DW_Project.docx               # Detailed documentation
-├── reports/
-│   └── DWH_Analysis.pbix             # Power BI analysis
-└── etl/ssis/                         # 9 SSIS ETL packages
-    ├── P1_Dim_Author.dtsx
-    ├── P2_Dim_Shipping_Method.dtsx
-    ├── P3_Dim_Order_History.dtsx
-    ├── P4_Dim_Book.dtsx
-    ├── P5_Dim_Bridge_Book_Author.dtsx
-    ├── P6_Dim_Address.dtsx
-    ├── P7_Dim_Customer.dtsx
-    ├── P8_Dim_Bridge_Customer_Address.dtsx
-    └── P9_Fact_Table.dtsx
-```
 
 ---
 
@@ -92,11 +64,10 @@ The ETL process consists of 9 SSIS packages executed sequentially:
 
 ## 🎯 Key Features
 
-- ✅ Star Schema design optimized for analytics
+- ✅ Snowflake Schema design optimized for analytics
 - ✅ Slowly Changing Dimensions (Type 1 & Type 2)
 - ✅ Comprehensive date dimension with bilingual holidays
 - ✅ Complete ETL pipeline with SSIS
-- ✅ OLAP cube for multidimensional analysis
 - ✅ Power BI dashboards
 
 ---
@@ -117,14 +88,3 @@ The ETL process consists of 9 SSIS packages executed sequentially:
 5. Open Power BI report and refresh data
 
 ---
-
-## 📚 Documentation
-
-- **Detailed Documentation**: [docs/DW_Project.docx](docs/DW_Project.docx)
-- **Power BI Report**: [reports/DWH_Analysis.pbix](reports/DWH_Analysis.pbix)
-- **SQL Schema**: [database/GBS_Schema.sql](database/GBS_Schema.sql)
-
----
-
-**Project Type**: Data Warehouse & Business Intelligence  
-**Schema**: Star Schema with Type 1 & Type 2 SCDs
