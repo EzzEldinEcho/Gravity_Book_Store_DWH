@@ -1,0 +1,31 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# SSIS
+*.dtproj.user
+*.database
+*.conmgr
+
+# Temporary files
+~$*
+*.tmp
+*.temp
+
+# OS files
+Thumbs.db
+.DS_Store
